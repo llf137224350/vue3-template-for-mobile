@@ -7,9 +7,10 @@ const isDev = process.env.NODE_ENV === 'development'; // 测试环境
 const postcss = px2rem({
   remUnit: 16
 });
-
+const projectName = '/demo';
 module.exports = {
-  publicPath: '/demo',
+  publicPath: projectName, // 访问目录
+  outputDir: projectName, // 打包生成的本地目录
   productionSourceMap: isDev,
   css: {
     extract: true,
