@@ -3,7 +3,7 @@
  * @param url 判断的路径
  */
 
-import { Config } from './config';
+import Config from './config';
 import { md5Encrypt } from './encrypt_and_decrypt';
 
 export function isAbsoluteUrl(url: string): boolean {

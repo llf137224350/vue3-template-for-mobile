@@ -4,7 +4,8 @@
  * @Description: 常用参数配置文件
  */
 
-export class Config {
+export default class Config {
+  public static PROJECT_PATH = '/demo';
   public static TEST = false;
   public static AES_KEY = ''; //
   public static DES_KEY = ''; //

@@ -3,7 +3,7 @@
  * @date 2020/6/1
  * @desc 加解密
  */
-import { Config } from './config';
+import Config from './config';
 const CryptoJS = require('../libs/crypto-js');
 
 /**

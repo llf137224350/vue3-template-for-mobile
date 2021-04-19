@@ -17,3 +17,31 @@ export function uuid(): string {
     return v.toString(16);
   });
 }
+
+/**
+ * @description: 获取路径参数
+ * @param {object} query
+ * @return {*}
+ */
+export function getQueryParam(): { [key: string]: string | undefined } {
+  const query: { [key: string]: string } = {};
+  let queryStr = window.location.href;
+  if (queryStr.includes('?')) {
+    // 是否携带参数
+    queryStr = queryStr.substring(queryStr.indexOf('?') + 1);
+    if (queryStr) {
+      // 问号后面部分
+      queryStr
+        .split('&')
+        .map((item) => {
+          return item.split('=');
+        })
+        .forEach((item: string[]) => {
+          if (item.length === 2) {
+            query[item[0]] = item[1];
+          }
+        });
+    }
+  }
+  return query;
+}
